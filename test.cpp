@@ -4,7 +4,7 @@
 
 int main() {
     // Read an image from file
-    cv::Mat input_image = cv::imread("22.jpg");
+    cv::Mat input_image = cv::imread("suong1.jpg");
 
     if (input_image.empty()) {
         std::cerr << "Could not open or find the image." << std::endl;
@@ -22,11 +22,11 @@ int main() {
     // Download the result back to the CPU
     cv::Mat output_image;
     gpu_output_image.download(output_image);
-
+    cv::imwrite("output.jpg", output_image);
     // Display the original and converted images
-    cv::imshow("Original Image", input_image);
-    cv::imshow("Converted Image", output_image);
-    cv::waitKey(0);
+    //cv::imshow("Original Image", input_image);
+    //cv::imshow("Converted Image", output_image);
+    //cv::waitKey(0);
 
     return 0;
 }

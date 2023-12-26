@@ -29,8 +29,9 @@ int main() {
         cout << hr.Process(indata, outdata, in_img.cols, in_img.rows, in_img.channels()) << endl;
 
 
-        cv::imwrite("F:/photo/ketqua1/khu" + to_string(i + 1) + ".jpg", out_img);
+        
 
+        cv::imwrite("ketqua1/khu" + to_string(i + 1) + ".jpg", out_img); 
         end = clock();
         cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
         total_cpu_time += cpu_time_used;

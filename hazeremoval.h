@@ -13,6 +13,7 @@ typedef struct _pixel {
 	_pixel(int _i, int _j, uchar _val) :i(_i), j(_j), val((uchar)_val) {}
 } Pixel;
 
+
 class CHazeRemoval
 {
 public:
@@ -30,7 +31,7 @@ private:
 
 };
 
-void get_dark_channel_gpu(const cv::cuda::GpuMat* p_src,  cv::cuda::GpuMat& dark_channel_gpu, int rows, int cols, int channels, int radius);
+void get_dark_channel_gpu(const cv::cuda::GpuMat& src_gpu, std::vector<Pixel>& tmp_vec, int rows, int cols,int channels, int radius);
 
 void get_air_light_gpu(const cv::cuda::GpuMat* p_src, cv::cuda::GpuMat& dark_channel_gpu, cv::Vec3d& Alight_host, int rows, int cols, int channels);
 
